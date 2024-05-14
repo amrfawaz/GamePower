@@ -3,20 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842A29702BF35F780053CE9D /* Navigation in Frameworks */ = {isa = PBXBuildFile; productRef = 842A296F2BF35F780053CE9D /* Navigation */; };
 		84CA6BBF2BF278EE00EEA34E /* GamePowerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA6BBE2BF278EE00EEA34E /* GamePowerApp.swift */; };
-		84CA6BC12BF278EE00EEA34E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CA6BC02BF278EE00EEA34E /* ContentView.swift */; };
 		84CA6BC32BF278F000EEA34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CA6BC22BF278F000EEA34E /* Assets.xcassets */; };
 		84CA6BC62BF278F000EEA34E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CA6BC52BF278F000EEA34E /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		842A296E2BF35F380053CE9D /* Packages */ = {isa = PBXFileReference; lastKnownFileType = text; path = Packages; sourceTree = SOURCE_ROOT; };
 		84CA6BBB2BF278EE00EEA34E /* GamePower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePower.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CA6BBE2BF278EE00EEA34E /* GamePowerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePowerApp.swift; sourceTree = "<group>"; };
-		84CA6BC02BF278EE00EEA34E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		84CA6BC22BF278F000EEA34E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CA6BC52BF278F000EEA34E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -26,6 +26,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842A29702BF35F780053CE9D /* Navigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +38,7 @@
 			children = (
 				84CA6BBD2BF278EE00EEA34E /* GamePower */,
 				84CA6BBC2BF278EE00EEA34E /* Products */,
+				84CA6BDB2BF2975A00EEA34E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +53,8 @@
 		84CA6BBD2BF278EE00EEA34E /* GamePower */ = {
 			isa = PBXGroup;
 			children = (
+				842A296E2BF35F380053CE9D /* Packages */,
 				84CA6BBE2BF278EE00EEA34E /* GamePowerApp.swift */,
-				84CA6BC02BF278EE00EEA34E /* ContentView.swift */,
 				84CA6BC22BF278F000EEA34E /* Assets.xcassets */,
 				84CA6BC42BF278F000EEA34E /* Preview Content */,
 			);
@@ -65,6 +67,13 @@
 				84CA6BC52BF278F000EEA34E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84CA6BDB2BF2975A00EEA34E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,8 +90,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				84CA6BDA2BF2974600EEA34E /* PBXTargetDependency */,
 			);
 			name = GamePower;
+			packageProductDependencies = (
+				842A296F2BF35F780053CE9D /* Navigation */,
+			);
 			productName = GamePower;
 			productReference = 84CA6BBB2BF278EE00EEA34E /* GamePower.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 84CA6BB22BF278ED00EEA34E;
+			packageReferences = (
+				84CA6BE42BF35B5200EEA34E /* XCLocalSwiftPackageReference "Packages" */,
+			);
 			productRefGroup = 84CA6BBC2BF278EE00EEA34E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,12 +153,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84CA6BC12BF278EE00EEA34E /* ContentView.swift in Sources */,
 				84CA6BBF2BF278EE00EEA34E /* GamePowerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84CA6BDA2BF2974600EEA34E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 84CA6BD92BF2974600EEA34E /* Navigation */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		84CA6BC72BF278F000EEA34E /* Debug */ = {
@@ -342,6 +364,24 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		84CA6BE42BF35B5200EEA34E /* XCLocalSwiftPackageReference "Packages" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		842A296F2BF35F780053CE9D /* Navigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Navigation;
+		};
+		84CA6BD92BF2974600EEA34E /* Navigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Navigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84CA6BB32BF278ED00EEA34E /* Project object */;
 }

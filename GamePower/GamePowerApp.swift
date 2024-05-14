@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Navigation
 
 @main
 struct GamePowerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootCoordinator()
         }
     }
 }
