@@ -13,6 +13,8 @@ protocol GiveawaysService {
 }
 
 public final class DefaultGiveawaysService: GiveawaysService {
+    public init() {}
+
     func fetchGiveaways() async -> Result<[Giveaway], Error> {
         let request = FetchGiveawaysRequest(headers: [:])
         let network = NetworkManager()

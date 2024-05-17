@@ -76,7 +76,7 @@ private extension GiveawayView {
 
     var title: some View {
         Text(viewModel.giveaway.title)
-            .typography(.heading01)
+            .typography(.heading02)
             .foregroundStyle(.white)
     }
 

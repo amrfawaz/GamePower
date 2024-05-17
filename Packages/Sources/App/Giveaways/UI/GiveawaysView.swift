@@ -9,7 +9,9 @@ import SwiftUI
 import CoreInterface
 
 public struct GiveawaysView: View {
-    @StateObject private var viewModel = GiveawaysViewModel()
+    @StateObject private var viewModel = GiveawaysViewModel(
+        services: DefaultGiveawaysService()
+    )
 
     public init() {}
 
@@ -30,6 +32,7 @@ private extension GiveawaysView {
     private var content: some View {
         ScrollView {
             VStack(spacing: Style.Spacing.md) {
+                title
                 carouselView
                 segmentedView
                     .padding(.horizontal, Style.Spacing.md)
@@ -37,6 +40,12 @@ private extension GiveawaysView {
                 
             }
         }
+    }
+
+    var title: some View {
+        Text("Explore Games Giveaways")
+            .typography(.heading01)
+            .foregroundStyle(.black)
     }
 
     private var carouselView: some View {

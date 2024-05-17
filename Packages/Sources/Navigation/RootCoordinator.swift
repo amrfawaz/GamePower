@@ -9,8 +9,6 @@ import SwiftUI
 import App
 
 public struct RootCoordinator: View {
-    @StateObject private var viewModel = RootCoordinatorViewModel()
-
     public init() {}
 
     public var body: some View {

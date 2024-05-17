@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class GiveawaysViewModel: ObservableObject {
-    @Published private(set) var giveaways: [Giveaway] = []
+public final class GiveawaysViewModel: ObservableObject {
+    @Published var giveaways: [Giveaway] = []
     @Published var selectedPlatform: String = ""
     
-    private let services = DefaultGiveawaysService()
+    private let services: GiveawaysService
 
     var platforms: [String] {
         var platformSet = Set<String>()
@@ -33,7 +33,9 @@ final class GiveawaysViewModel: ObservableObject {
         selectedPlatform = platform
     }
 
-    public init() {}
+    init(services: GiveawaysService) {
+        self.services = services
+    }
 
     @MainActor
     func fetchGiveaways() async -> Void {

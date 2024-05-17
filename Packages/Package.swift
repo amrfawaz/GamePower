@@ -55,5 +55,11 @@ let package = Package(
             name: "Navigation",
             dependencies: ["App"]
         ),
+        .testTarget(
+            name: "AppTests",
+            dependencies: [
+                "App"
+            ]
+        )
     ]
 )

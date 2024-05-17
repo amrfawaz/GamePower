@@ -8,7 +8,7 @@
 import Foundation
 
 final class GiveawayViewModel: ObservableObject {
-    enum CardType {
+    public enum CardType {
         case carousel
         case list
     }
