@@ -47,7 +47,8 @@ let package = Package(
         .target(
             name: "App",
             dependencies: [
-                "NetworkManager" // Add NetworkManager as a dependency here
+                "NetworkManager", // Add NetworkManager as a dependency here
+                "CoreInterface"
             ]
         ),
         .target(

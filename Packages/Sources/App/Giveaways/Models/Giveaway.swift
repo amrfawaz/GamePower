@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Giveaway: Codable {
+struct Giveaway: Codable, Identifiable {
     let id: Int
     let title: String
     let worth: String
@@ -19,9 +19,9 @@ struct Giveaway: Codable {
     let publishedDate: String
     let type: String
     let platforms: String
-    let end_date: String
+    let endDate: String
     let users: Int
-    let status: String
+    var status: String
     let gamerpowerUrl: String
     let openGiveaway: String
 
@@ -37,10 +37,37 @@ struct Giveaway: Codable {
         case publishedDate = "published_date"
         case type
         case platforms
-        case end_date
+        case endDate = "end_date"
         case users
         case status
         case gamerpowerUrl = "gamerpower_url"
         case openGiveaway = "open_giveaway"
     }
 }
+
+// MARK: - Mocks
+
+#if DEBUG
+extension Giveaway {
+    static var mockedGiveaway: Giveaway {
+        Giveaway(
+            id: 2588,
+            title: "MechDefender (IndieGala) Giveaway",
+            worth: "$0.99",
+            thumbnail: "https://www.gamerpower.com/offers/1/6516e1e57062e.jpg",
+            image: "https://www.gamerpower.com/offers/1b/6516e1e57062e.jpg",
+            description: "Download MechDefender for free via IndieGala! MechDefender is an indie top-down shooter with tower defense features.",
+            instructions: "1. Login into your free IndieGala account.\r\n2. Scroll down and click the \"Add to Your Library\" button to add the game to your library.\r\n3. Go to \"My Library\" to find your game.",
+            openGiveawayUrl: "https://www.gamerpower.com/open/mechdefender-indiegala-giveaway",
+            publishedDate: "2024-05-12 20:31:57",
+            type: "Game",
+            platforms: "PC, DRM-Free",
+            endDate: "N/A",
+            users: 3300,
+            status: "Active",
+            gamerpowerUrl: "https:\\www.gamerpower.com/mechdefender-indiegala-giveaway",
+            openGiveaway: "https://www.gamerpower.com/open/mechdefender-indiegala-giveaway"
+        )
+    }
+}
+#endif
