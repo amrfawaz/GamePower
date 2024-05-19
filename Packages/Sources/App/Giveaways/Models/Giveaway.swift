@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Giveaway: Codable, Identifiable, Equatable {
-    let id: Int
+public struct Giveaway: Codable, Identifiable, Equatable, Hashable {
+    public let id: Int
     let title: String
     let worth: String
     let thumbnail: String

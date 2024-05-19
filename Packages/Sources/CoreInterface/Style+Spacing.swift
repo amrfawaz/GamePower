@@ -48,5 +48,6 @@ public extension Style {
         public static let heartButtonHeight: Double = 32.0
         public static let heartButtonWidth: Double = 52.0
         public static let carouselViewHeight: Double = 232.0
+        public static let giveawayDetailsImage: Double = 300.0
     }
 }

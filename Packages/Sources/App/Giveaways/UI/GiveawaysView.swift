@@ -12,17 +12,20 @@ public struct GiveawaysView: View {
     @StateObject private var viewModel = GiveawaysViewModel(
         services: DefaultGiveawaysService()
     )
+    @State private var path = NavigationPath()
 
     public init() {}
 
     public var body: some View {
-        content
-            .padding(.vertical, Style.Spacing.md)
-            .onAppear {
-                Task {
-                    await viewModel.fetchGiveaways()
+        NavigationStack(path: $path) {
+            content
+                .padding(.vertical, Style.Spacing.md)
+                .onAppear {
+                    Task {
+                        await viewModel.fetchGiveaways()
+                    }
                 }
-            }
+        }
     }
 }
 
@@ -37,7 +40,6 @@ private extension GiveawaysView {
                 segmentedView
                     .padding(.horizontal, Style.Spacing.md)
                 list
-                
             }
         }
     }
@@ -76,15 +78,23 @@ private extension GiveawaysView {
     private var list: some View {
         LazyVStack(spacing: 0) {
             ForEach(viewModel.filter()) { giveaway in
-                GiveawayView(
-                    viewModel: GiveawayViewModel(
-                        giveaway: giveaway,
-                        cardType: .list
+                NavigationLink(value: giveaway) {
+                    GiveawayView(
+                        viewModel: GiveawayViewModel(
+                            giveaway: giveaway,
+                            cardType: .list
+                        )
                     )
-                )
-                .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                }
             }
+        }
+        .navigationDestination(for: Giveaway.self) { giveaway in
+            GiveawayDetailsView(
+                viewModel: GiveawayDetailsViewModel(giveaway: giveaway),
+                path: $path
+            )
         }
     }
 }
