@@ -7,8 +7,8 @@
 
 import Foundation
 
-final class GiveawayViewModel: ObservableObject {
-    public enum CardType {
+public final class GiveawayViewModel: ObservableObject {
+    public enum CardType: Equatable {
         case carousel
         case list
     }

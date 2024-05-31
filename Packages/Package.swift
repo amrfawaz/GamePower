@@ -26,7 +26,8 @@ let package = Package(
             targets: ["Navigation"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.9.1"))
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.9.1")),
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture.git", from: "1.10.4")
     ],
     targets: [
         .target(
@@ -48,7 +49,8 @@ let package = Package(
             name: "App",
             dependencies: [
                 "NetworkManager", // Add NetworkManager as a dependency here
-                "CoreInterface"
+                "CoreInterface",
+                .product(name: "ComposableArchitecture", package: "swift-composable-architecture") // Correct product reference
             ]
         ),
         .target(
